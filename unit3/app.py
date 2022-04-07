@@ -10,7 +10,7 @@ def start():
     text = """It is a place where your dreams come true"""
 
     choices = [
-        ('play',"Play"),
+        ('first_page',"Play"),
         ('run_away',"Go away")
     ]
 
@@ -19,14 +19,14 @@ def start():
 
 
 @app.route("/game")
-def play():
+def first_page():
     title = "You chose to play"
     
     text = """Feel free to choose one of my magic boxes"""
 
     choices = [
         ('firstbox',"Choose box #1"),
-        ('secondbox',"Choose box #2")
+        ('secondbox',"Choose box #2"),
         ('run_away', "Go away")
     ]
 
