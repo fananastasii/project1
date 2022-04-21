@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def start():
     title = "Play with me"
-    
+
     text = """It is a place where your dreams come true"""
 
     choices = [
