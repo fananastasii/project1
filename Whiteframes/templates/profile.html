@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="{{url_for('static', filename=profile['picture'])}}" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="{{url_for('static', filename=profile['picture'])}}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">{{profile['name']}}</p>
+          <p class="subtitle is-6">{{profile['username']}}</p>
+        </div>
+      </div>
+      {% for post in profile['posts'] %}
+      <div class="content">
+        <strong>{{post['name']}}</strong> <small>@{{post['username']}}</small> <small>{{post['datetime']}}</small>
+          <br>
+          {{post['text']}}
+          <br>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
